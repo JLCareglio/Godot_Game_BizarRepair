@@ -1,0 +1,247 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Sprites/botones/boton_replay1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/MundoFinal/mundo_sad.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/MundoFinal/mundo_feliz_bg.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/Buttons/Start 03.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/MundoFinal/nubes.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/MundoFinal/nubes_oscuiras.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/botones/boton_replay2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/botones/boton_back2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/botones/boton_back1.png" type="Texture" id=10]
+[ext_resource path="res://Animaciones/NubeArriba.anim" type="Animation" id=11]
+[ext_resource path="res://Animaciones/NubeAbajo.anim" type="Animation" id=12]
+
+[sub_resource type="InputEventAction" id=1]
+action = "ui_accept"
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Fonts/edit-undo/editundo.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 5
+font_data = SubResource( 3 )
+
+[node name="GameOver" type="Node2D"]
+z_index = 9
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="FinalBueno" type="Control" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/FinalBueno"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NubeBuena" type="TextureRect" parent="CanvasLayer/FinalBueno"]
+margin_left = 224.866
+margin_top = 263.0
+margin_right = 381.86
+margin_bottom = 405.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FinalBueno/NubeBuena"]
+autoplay = "nubearriba"
+playback_speed = 0.1
+method_call_mode = 1
+anims/NubeArriba = ExtResource( 11 )
+anims/nubearriba = ExtResource( 11 )
+
+[node name="NubeBuena2" type="TextureRect" parent="CanvasLayer/FinalBueno"]
+margin_left = 660.442
+margin_top = 547.0
+margin_right = 817.442
+margin_bottom = 689.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FinalBueno/NubeBuena2"]
+autoplay = "nubeabajo"
+playback_speed = 0.2
+anims/nubeabajo = ExtResource( 12 )
+
+[node name="FinalMalo" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/FinalMalo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NubeMala" type="TextureRect" parent="CanvasLayer/FinalMalo"]
+margin_left = 186.635
+margin_top = 263.0
+margin_right = 343.636
+margin_bottom = 405.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FinalMalo/NubeMala"]
+autoplay = "NubeArriba"
+playback_speed = 0.1
+anims/NubeArriba = ExtResource( 11 )
+
+[node name="NubeMala2" type="TextureRect" parent="CanvasLayer/FinalMalo"]
+margin_left = 665.385
+margin_top = 547.0
+margin_right = 822.385
+margin_bottom = 689.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/FinalMalo/NubeMala2"]
+autoplay = "NubeAbajo"
+playback_speed = 0.2
+anims/NubeAbajo = ExtResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.407843, 0.882353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonJugar" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -320.0
+margin_top = -165.0
+margin_right = -120.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+shortcut = SubResource( 2 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMenu" type="TextureButton" parent="CanvasLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -170.0
+margin_top = -165.0
+margin_right = 30.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.75, 0.75 )
+shortcut = SubResource( 2 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_titulo_final" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 4 )
+text = "Bien hecho!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_puntos" type="Label" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_top = 74.0
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 5 )
+text = "0
+puntos"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_final_numero" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -133.0
+margin_right = 320.0
+margin_bottom = -13.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.290196, 0.290196, 1, 1 )
+text = "Final 0 conseguido"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_finales" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -315.0
+margin_bottom = -178.0
+custom_fonts/font = SubResource( 6 )
+text = "Por alguna razón las aves armaron una guerra con los peces y todo el resto de seres vivos quedó en medio del fuego cruzado... al final la guerra cesó... pero porque ya no quedaba elemento que pudiera ser usado como arma, en todo caso, todos se extinguieron."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource( 5 )
+[connection signal="button_down" from="CanvasLayer/ButtonJugar" to="." method="_on_ButtonJugar_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonJugar" to="." method="_on_ButtonJugar_button_up"]
+[connection signal="button_down" from="CanvasLayer/ButtonMenu" to="." method="_on_ButtonMenu_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonMenu" to="." method="_on_ButtonMenu_button_up"]

@@ -1,0 +1,452 @@
+[gd_scene load_steps=43 format=2]
+
+[ext_resource path="res://Scripts/ProgressBarTiempo.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/botones/boton_pintura1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/botones/boton_martillo1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/botones/boton_harry1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/caja_cerrada.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Juego.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/caja_abierta.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/caja_abierta_frente.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/escena4_edit.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/maquina.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/cabeza_steve.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/luz_roja.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/luz_interior_maquina.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/luz_apagada.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/botones/boton_pintura2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/botones/boton_martillo2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/botones/boton_cinta2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/botones/boton_cinta1.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/botones/boton_harry2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/botones/boton_harry1_B.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/botones/boton_harry1_C.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/botones/boton_harry1_A.png" type="Texture" id=22]
+[ext_resource path="res://Sounds/Buttons/Boton Fabrica Este me gusta.wav" type="AudioStream" id=23]
+[ext_resource path="res://Sounds/Alarm/Init Work.wav" type="AudioStream" id=24]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.243137, 0.796078, 0.25098, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color( 0, 0.0196078, 0.188235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0.0196078, 0.188235, 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends HBoxContainer
+
+
+func _on_RHarryPotter_button_down():
+	$AudioBotonDown.play()
+	$RHarryPotter/AnimatedSprite.visible = false
+
+
+func _on_RHarryPotter_button_up():
+	$RHarryPotter/AnimatedSprite.visible = true
+
+
+func _on_RMartillo_button_down():
+	$AudioBotonDown.play()
+
+
+func _on_RAerosol_button_down():
+	$AudioBotonDown.play()
+
+
+func _on_RCinta_button_down():
+	$AudioBotonDown.play()
+"
+
+[sub_resource type="InputEventAction" id=4]
+action = "ui_left"
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
+
+[sub_resource type="InputEventAction" id=6]
+action = "ui_up"
+
+[sub_resource type="ShortCut" id=7]
+shortcut = SubResource( 6 )
+
+[sub_resource type="InputEventAction" id=8]
+action = "ui_right"
+
+[sub_resource type="ShortCut" id=9]
+shortcut = SubResource( 8 )
+
+[sub_resource type="InputEventAction" id=10]
+action = "ui_down"
+
+[sub_resource type="ShortCut" id=11]
+shortcut = SubResource( 10 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://Fonts/edit-undo/editundo.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 55
+outline_size = 3
+outline_color = Color( 0.0666667, 0.0196078, 0.294118, 1 )
+font_data = SubResource( 13 )
+
+[sub_resource type="Animation" id=15]
+length = 2.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.9, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.9, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 180 ), Vector2( 0, 180 ), Vector2( 0, 180 ), Vector2( 0, 50 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("luz_roja:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("luz_interior_maquina:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="GDScript" id=17]
+script/source = "extends Sprite
+
+var timer
+
+func _ready():
+	self.visible = false
+	timer = get_tree().create_timer(1.0)
+
+func _process(delta):
+	if timer.time_left <= 0.0:
+		timer = get_tree().create_timer(rand_range(3.5, 6.0))
+		self.visible = false
+		yield(timer, \"timeout\")
+		timer = get_tree().create_timer(rand_range(0.05, 0.9))
+		self.visible = true
+		yield(timer, \"timeout\")
+"
+
+[sub_resource type="Animation" id=18]
+tracks/0/type = "value"
+tracks/0/path = NodePath("caja_abierta_compuesta:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 826, 775 ), Vector2( 1046, 647 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("caja_cerrada_sola3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 166, 1159 ), Vector2( 826, 775 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("caja_abierta_sola2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1046, 647 ), Vector2( 1266, 519 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -220, 128 ) ]
+}
+
+[node name="Juego" type="Node2D" groups=[
+"GameController",
+]]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -375.0
+margin_top = 37.0
+margin_right = 375.0
+margin_bottom = 77.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 90.0
+percent_visible = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+time = 60.0
+
+[node name="Reparadores" type="HBoxContainer" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -170.0
+margin_right = 1020.0
+margin_bottom = -19.9999
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMartillo" type="TextureButton" parent="CanvasLayer/Reparadores"]
+margin_right = 150.0
+margin_bottom = 150.0
+shortcut = SubResource( 5 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 16 )
+
+[node name="RAerosol" type="TextureButton" parent="CanvasLayer/Reparadores"]
+margin_left = 154.0
+margin_right = 304.0
+margin_bottom = 150.0
+shortcut = SubResource( 7 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 15 )
+
+[node name="RCinta" type="TextureButton" parent="CanvasLayer/Reparadores"]
+margin_left = 308.0
+margin_right = 458.0
+margin_bottom = 150.0
+shortcut = SubResource( 9 )
+texture_normal = ExtResource( 18 )
+texture_pressed = ExtResource( 17 )
+
+[node name="RHarryPotter" type="TextureButton" parent="CanvasLayer/Reparadores"]
+visible = false
+margin_left = 462.0
+margin_right = 612.0
+margin_bottom = 150.0
+shortcut = SubResource( 11 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 19 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Reparadores/RHarryPotter"]
+position = Vector2( 74.9889, 74.9788 )
+frames = SubResource( 12 )
+frame = 1
+speed_scale = 2.0
+playing = true
+
+[node name="AudioBotonDown" type="AudioStreamPlayer" parent="CanvasLayer/Reparadores"]
+stream = ExtResource( 23 )
+
+[node name="DebugContadores" type="Label" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -482.0
+margin_right = 224.0
+margin_bottom = -285.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texto_Arreglaste" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_top = 178.772
+margin_right = 6.10352e-05
+margin_bottom = 279.772
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.996078, 0.180392, 0.180392, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Arreglaste LALA"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Texto_Arreglaste"]
+anims/Texto_Anim = SubResource( 15 )
+
+[node name="Cinta" type="Node2D" parent="."]
+
+[node name="PuntoA" type="Position2D" parent="Cinta"]
+position = Vector2( 14, 240 )
+
+[node name="PuntoB" type="Position2D" parent="Cinta"]
+position = Vector2( 503, 536 )
+
+[node name="PuntoC" type="Position2D" parent="Cinta"]
+position = Vector2( 764, 687 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Maquina" type="Node2D" parent="."]
+z_index = 2
+
+[node name="maquina" type="Sprite" parent="Maquina"]
+position = Vector2( 165.5, 273.5 )
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="luz_apagada" type="Sprite" parent="Maquina"]
+position = Vector2( 220, 181.5 )
+z_index = 2
+texture = ExtResource( 14 )
+
+[node name="luz_roja" type="Sprite" parent="Maquina"]
+visible = false
+position = Vector2( 219, 181.959 )
+z_index = 3
+texture = ExtResource( 12 )
+
+[node name="luz_interior_maquina" type="Sprite" parent="Maquina"]
+visible = false
+position = Vector2( 282.058, 308.099 )
+texture = ExtResource( 13 )
+
+[node name="Animation" type="AnimationPlayer" parent="Maquina"]
+anims/Luz_Roja = SubResource( 16 )
+
+[node name="AlarmaMaquina" type="AudioStreamPlayer2D" parent="Maquina"]
+position = Vector2( 219.002, 186.131 )
+stream = ExtResource( 24 )
+
+[node name="cabeza_steve" type="Sprite" parent="."]
+visible = false
+position = Vector2( 632, 331 )
+texture = ExtResource( 11 )
+script = SubResource( 17 )
+
+[node name="CintaCajas" type="Node2D" parent="."]
+position = Vector2( -220, 128 )
+
+[node name="Animation" type="AnimationPlayer" parent="CintaCajas"]
+method_call_mode = 1
+anims/MoverCajas = SubResource( 18 )
+
+[node name="caja_abierta_sola2" type="Sprite" parent="CintaCajas"]
+position = Vector2( 1266, 519 )
+z_index = -2
+texture = ExtResource( 7 )
+
+[node name="caja_abierta_compuesta" type="Node2D" parent="CintaCajas"]
+position = Vector2( 1046, 647 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="caja_abierta_atras" type="Sprite" parent="CintaCajas/caja_abierta_compuesta"]
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="caja_abierta_frente" type="Sprite" parent="CintaCajas/caja_abierta_compuesta"]
+z_index = 1
+texture = ExtResource( 8 )
+
+[node name="caja_cerrada_sola" type="Sprite" parent="CintaCajas"]
+position = Vector2( 606, 903 )
+z_index = 2
+texture = ExtResource( 5 )
+
+[node name="caja_cerrada_sola2" type="Sprite" parent="CintaCajas"]
+position = Vector2( 386, 1031 )
+z_index = 3
+texture = ExtResource( 5 )
+
+[node name="caja_cerrada_sola3" type="Sprite" parent="CintaCajas"]
+position = Vector2( 826, 775 )
+z_index = 4
+texture = ExtResource( 5 )
+
+[node name="EsperaParaComenzar" type="Timer" parent="."]
+wait_time = 1.5
+[connection signal="button_down" from="CanvasLayer/Reparadores/RMartillo" to="CanvasLayer/Reparadores" method="_on_RMartillo_button_down"]
+[connection signal="button_down" from="CanvasLayer/Reparadores/RAerosol" to="CanvasLayer/Reparadores" method="_on_RAerosol_button_down"]
+[connection signal="button_down" from="CanvasLayer/Reparadores/RCinta" to="CanvasLayer/Reparadores" method="_on_RCinta_button_down"]
+[connection signal="button_down" from="CanvasLayer/Reparadores/RHarryPotter" to="CanvasLayer/Reparadores" method="_on_RHarryPotter_button_down"]
+[connection signal="button_up" from="CanvasLayer/Reparadores/RHarryPotter" to="CanvasLayer/Reparadores" method="_on_RHarryPotter_button_up"]

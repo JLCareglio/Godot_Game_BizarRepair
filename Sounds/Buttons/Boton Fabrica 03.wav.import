@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Boton Fabrica 03.wav-29431ee1ca05c5e75b12555734c41bdb.sample"
+
+[deps]
+
+source_file="res://Sounds/Buttons/Boton Fabrica 03.wav"
+dest_files=[ "res://.import/Boton Fabrica 03.wav-29431ee1ca05c5e75b12555734c41bdb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

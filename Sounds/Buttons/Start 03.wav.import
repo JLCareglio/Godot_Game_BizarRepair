@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Start 03.wav-1fa1ad617da5e91d8cf30586baf48598.sample"
+
+[deps]
+
+source_file="res://Sounds/Buttons/Start 03.wav"
+dest_files=[ "res://.import/Start 03.wav-1fa1ad617da5e91d8cf30586baf48598.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

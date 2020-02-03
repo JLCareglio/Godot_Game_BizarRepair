@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Objeto.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Objetos/Filas en los Cajeros/Filas De Cajeros Arreglado.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Objetos/Filas en los Cajeros/Filas De Cajeros Roto.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Objetos/Filas en los Cajeros/Filas De Cajeros Natural.png" type="Texture" id=4]
+
+[node name="Objeto" instance=ExtResource( 1 )]
+textura_arreglado = ExtResource( 2 )
+textura_destrozado = ExtResource( 3 )
+mensaje = "Las Filas de Cajeros"
+RAereosol_repara = false
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 4 )

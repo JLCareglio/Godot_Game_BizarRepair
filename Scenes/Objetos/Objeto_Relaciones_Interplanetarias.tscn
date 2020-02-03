@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Objeto.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Objetos/Relaciones Interplanetarias/Relaciones Interplanetarias Arreglado.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Objetos/Relaciones Interplanetarias/Relaciones Interplanetarias Natural.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Objetos/Relaciones Interplanetarias/Relaciones Interplanetarias Roto.png" type="Texture" id=4]
+
+[node name="Objeto" instance=ExtResource( 1 )]
+textura_arreglado = ExtResource( 2 )
+textura_destrozado = ExtResource( 4 )
+mensaje = "Las Relaciones Interplanetarias"
+RAereosol_repara = false
+RCinta_repara = true
+RMartillo_repara = false
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 3 )

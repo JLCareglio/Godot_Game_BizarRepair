@@ -1,0 +1,102 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scripts/Objeto.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Objetos/Paz/Paz Natural.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Objetos/Paz/Paz Roto.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Objetos/Paz/Paz Arreglada.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0004_Capa-4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0002_Capa-2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0003_Capa-3.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0001_Capa-1.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0008_Capa-8.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0005_Capa-5.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0006_Capa-6.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0007_Capa-7.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0009_Capa-0-copia.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/clud/explode-animation-smoke-steam-dust-or-smoke-bomb-vector-22693068_0010_Capa-10.png" type="Texture" id=14]
+[ext_resource path="res://Sounds/Objets Effects/Hammer.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sounds/Objets Effects/Spray.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sounds/Objets Effects/Tape.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sounds/Objets Effects/Magic.wav" type="AudioStream" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "Cloud",
+"speed": 30.0
+} ]
+
+[sub_resource type="Animation" id=2]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 50, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 160.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.2, 0.2 ) ]
+}
+
+[node name="Objeto" type="KinematicBody2D" groups=[
+"Objeto",
+]]
+script = ExtResource( 1 )
+textura_arreglado = ExtResource( 4 )
+textura_destrozado = ExtResource( 3 )
+RAereosol_repara = true
+RMartillo_repara = true
+Audio_Aereosol = ExtResource( 16 )
+Audio_Cinta = ExtResource( 17 )
+Audio_Martillo = ExtResource( 15 )
+Audio_HarryPotter = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -60 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "Cloud"
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, -250 )
+
+[node name="EsperaEnPuntoB" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/Caida_Caja = SubResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 0, -53 )
+stream = ExtResource( 15 )
