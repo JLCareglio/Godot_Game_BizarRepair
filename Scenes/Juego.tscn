@@ -301,7 +301,6 @@ texture_pressed = ExtResource( 19 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Reparadores/RHarryPotter"]
 position = Vector2( 74.9889, 74.9788 )
 frames = SubResource( 12 )
-frame = 1
 speed_scale = 2.0
 playing = true
 

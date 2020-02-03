@@ -12,6 +12,7 @@ onready var objetos = [
 	preload("res://Scenes/Objetos/Objeto_Relaciones_Interplanetarias.tscn")
 ]
 var obj_instance
+var obj_instance_anterior
 
 var contadores = {
 	"c_arreglados" : 0, "c_destrozados" : 0
@@ -22,11 +23,12 @@ func _ready():
 	$Maquina/AlarmaMaquina.play()
 	yield($EsperaParaComenzar, "timeout")
 	$CanvasLayer/ProgressBar.visible = true
+	obj_instance_anterior = objetos[2].instance()
 	crear_objeto()
 	pass
 	
 func reparador_usado(mensaje_obj, se_arreglo_obj):
-	$CanvasLayer/Reparadores/RHarryPotter.visible = true if rand_range(0,1) <= 0.5 else false
+	$CanvasLayer/Reparadores/RHarryPotter.visible = true if rand_range(0,1) <= 0.2 else false
 	if se_arreglo_obj:
 		$CanvasLayer/Texto_Arreglaste.add_color_override("font_color", Color("6afe2e"))
 		$CanvasLayer/Texto_Arreglaste.text = "Arreglaste " + mensaje_obj
@@ -38,7 +40,13 @@ func reparador_usado(mensaje_obj, se_arreglo_obj):
 func crear_objeto():
 	if $CanvasLayer/ProgressBar.value > 3:
 		randomize()
-		obj_instance = objetos[randi() % objetos.size()].instance()
+		var rand = randi() % objetos.size()
+		obj_instance = objetos[rand].instance()
+		while obj_instance.mensaje == obj_instance_anterior.mensaje:
+			rand = randi() % objetos.size()
+			obj_instance = objetos[rand].instance()
+		obj_instance_anterior = obj_instance
+		
 		obj_instance.position = $Cinta/PuntoA.position
 		obj_instance.Target = $Cinta/PuntoB
 		$CanvasLayer/Reparadores/RAerosol.connect("button_down", obj_instance, "_on_RAerosol_button_down")
