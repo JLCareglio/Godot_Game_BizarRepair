@@ -81,7 +81,7 @@ Audio_HarryPotter = ExtResource( 18 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 visible = false
-position = Vector2( 0, -60 )
+position = Vector2( -2, -85 )
 z_index = 1
 frames = SubResource( 1 )
 animation = "Cloud"

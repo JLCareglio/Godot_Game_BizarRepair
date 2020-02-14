@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Video Presentacion.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Scripts/Introduccion.gd" type="Script" id=2]
-[ext_resource path="res://Sounds/Music/Music Title.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Buttons/Start 03.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sprites/bizarrepair_text.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/botones/boton_play2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/botones/boton_play1.png" type="Texture" id=7]
@@ -65,7 +65,6 @@ stream = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 1 )
-autoplay = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

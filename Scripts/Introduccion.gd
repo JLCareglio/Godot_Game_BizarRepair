@@ -1,5 +1,9 @@
 extends Control
 
+func _ready():
+	$"/root/Persistente/MusicTitle".play()
+	$VideoPlayer.play()
+
 func _on_Button_button_up():
 	$VideoPlayer.visible = false
 	$Button.visible = false
