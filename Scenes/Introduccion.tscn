@@ -2,28 +2,28 @@
 
 [ext_resource path="res://Video Presentacion.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Scripts/Introduccion.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/Music/Music Title.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Sprites/bizarrepair_text.png" type="Texture" id=4]
-[ext_resource path="res://Sounds/Buttons/Start 02.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sprites/botones/boton_play2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/botones/boton_play1.png" type="Texture" id=7]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="Theme" id=1]
 
-[sub_resource type="InputEventAction" id=3]
+[sub_resource type="InputEventAction" id=2]
 action = "ui_accept"
 
-[sub_resource type="ShortCut" id=4]
-shortcut = SubResource( 3 )
+[sub_resource type="ShortCut" id=3]
+shortcut = SubResource( 2 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://Fonts/edit-undo/editundo.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 50
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 22
-font_data = SubResource( 5 )
+font_data = SubResource( 4 )
 
 [node name="Introduccion" type="Control"]
 anchor_right = 1.0
@@ -59,7 +59,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 296, 632 )
-stream = ExtResource( 5 )
+stream = ExtResource( 3 )
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 anchor_right = 1.0
@@ -79,8 +79,8 @@ margin_left = -100.0
 margin_top = 180.0
 margin_right = 100.0
 margin_bottom = 380.0
-theme = SubResource( 2 )
-shortcut = SubResource( 4 )
+theme = SubResource( 1 )
+shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 __meta__ = {
@@ -104,7 +104,7 @@ margin_left = -450.0
 margin_top = -328.5
 margin_right = 450.0
 margin_bottom = 328.5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Muy bien Stevie... Sabemos que trabajas mucho y cobras poco. Pero tienes que seguir con tu deber de crear mundos, el universo no se llenara solo."
 align = 1
 valign = 1
@@ -122,7 +122,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
-shortcut = SubResource( 4 )
+shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 __meta__ = {
@@ -146,7 +146,7 @@ margin_left = -450.0
 margin_top = -328.5
 margin_right = 450.0
 margin_bottom = 328.5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "De ti depende que las cosas sean un éxito o un desastre. Por lo que tienes que arreglar los elementos que componen los planetas con su herramienta correspondiente..."
 align = 1
 valign = 1
@@ -164,7 +164,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
-shortcut = SubResource( 4 )
+shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 __meta__ = {
@@ -188,7 +188,7 @@ margin_left = -450.0
 margin_top = -328.5
 margin_right = 450.0
 margin_bottom = 328.5
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Pero ni nosotros sabemos qué cosa es que o con que se arregla, asi que tendras que averiguarlo. Me sorprende que esta empresa no se haya fundido ya.
 
 Suerte."
@@ -208,7 +208,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
-shortcut = SubResource( 4 )
+shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 __meta__ = {

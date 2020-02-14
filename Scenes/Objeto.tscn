@@ -39,7 +39,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 50, 80 ) ]
+"values": [ Vector2( 0, -90 ), Vector2( 60, 50 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:rotation_degrees")
@@ -63,7 +63,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.2, 0.2 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 0.7, 0.7 ) ]
 }
 
 [node name="Objeto" type="KinematicBody2D" groups=[
@@ -87,9 +87,8 @@ frames = SubResource( 1 )
 animation = "Cloud"
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 0, -90 )
 texture = ExtResource( 2 )
-offset = Vector2( 0, -250 )
 
 [node name="EsperaEnPuntoB" type="Timer" parent="."]
 wait_time = 1.5

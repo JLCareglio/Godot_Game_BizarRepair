@@ -159,7 +159,6 @@ margin_left = -320.0
 margin_top = -165.0
 margin_right = -120.0
 margin_bottom = 35.0
-rect_scale = Vector2( 0.75, 0.75 )
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
@@ -176,13 +175,14 @@ margin_left = -170.0
 margin_top = -165.0
 margin_right = 30.0
 margin_bottom = 35.0
-rect_scale = Vector2( 0.75, 0.75 )
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Node" type="Node" parent="CanvasLayer/ButtonMenu"]
 
 [node name="txt_titulo_final" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0

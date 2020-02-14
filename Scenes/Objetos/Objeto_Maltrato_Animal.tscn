@@ -14,5 +14,5 @@ RCinta_repara = true
 RMartillo_repara = false
 
 [node name="Sprite" parent="." index="1"]
-position = Vector2( 0, -14 )
+position = Vector2( 0, -84 )
 texture = ExtResource( 2 )
