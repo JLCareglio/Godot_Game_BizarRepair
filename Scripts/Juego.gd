@@ -22,6 +22,7 @@ func _ready():
 	$EsperaParaComenzar.start()
 	$Maquina/AlarmaMaquina.play()
 	yield($EsperaParaComenzar, "timeout")
+	$CanvasLayer/ProgressBar.is_stop = false
 	$CanvasLayer/ProgressBar.visible = true
 	obj_instance_anterior = objetos[2].instance()
 	crear_objeto()

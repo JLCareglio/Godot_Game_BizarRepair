@@ -56,12 +56,18 @@ func _on_ButtonJugar_button_up():
 	$"/root/Persistente/MusicGoodFinal".stop()
 	$"/root/Persistente/MusicBadFinal".stop()
 	$"/root/Persistente/MusicTitle".play()
-	get_tree().change_scene("res://Scenes/Introduccion.tscn")
+	$CanvasLayer/ButtonJugar.visible = false
+	$CanvasLayer/ButtonMenu.visible = false
+	self.visible = false
+	Persistente.load_scene("res://Scenes/Introduccion.tscn")
 	
 func _on_ButtonMenu_button_up():
 	$"/root/Persistente/MusicGoodFinal".stop()
 	$"/root/Persistente/MusicBadFinal".stop()
 	$"/root/Persistente/MusicTitle".play()
-	get_tree().change_scene("res://Scenes/Juego.tscn")
+	$CanvasLayer/ButtonJugar.visible = false
+	$CanvasLayer/ButtonMenu.visible = false
+	self.visible = false
+	Persistente.load_scene("res://Scenes/Juego.tscn")
 
 

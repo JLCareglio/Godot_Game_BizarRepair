@@ -8,7 +8,7 @@
 [ext_resource path="res://Scripts/Juego.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/caja_abierta.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/caja_abierta_frente.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/escena4_edit.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/escena4_edit.jpg" type="Texture" id=9]
 [ext_resource path="res://Sprites/maquina.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/cabeza_steve.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/luz_roja.png" type="Texture" id=12]
@@ -252,7 +252,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-time = 60.0
+time = 40.0
 
 [node name="Reparadores" type="HBoxContainer" parent="CanvasLayer"]
 anchor_top = 1.0
@@ -269,6 +269,7 @@ __meta__ = {
 [node name="RMartillo" type="TextureButton" parent="CanvasLayer/Reparadores"]
 margin_right = 150.0
 margin_bottom = 150.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 5 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 16 )
@@ -277,6 +278,7 @@ texture_pressed = ExtResource( 16 )
 margin_left = 154.0
 margin_right = 304.0
 margin_bottom = 150.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 7 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 15 )
@@ -285,6 +287,7 @@ texture_pressed = ExtResource( 15 )
 margin_left = 308.0
 margin_right = 458.0
 margin_bottom = 150.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 9 )
 texture_normal = ExtResource( 18 )
 texture_pressed = ExtResource( 17 )
@@ -294,6 +297,7 @@ visible = false
 margin_left = 462.0
 margin_right = 612.0
 margin_bottom = 150.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 11 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 19 )

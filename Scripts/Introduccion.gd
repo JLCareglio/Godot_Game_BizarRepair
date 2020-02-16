@@ -6,6 +6,7 @@ func _ready():
 
 func _on_Button_button_up():
 	$VideoPlayer.visible = false
+	$VideoPlayer.queue_free()
 	$Button.visible = false
 	$TextureRect.visible = false
 	$Tutorial.visible = true
@@ -30,11 +31,13 @@ func _on_Buttont2_button_up():
 
 
 func _on_Buttont3_button_up():
-	$Tutorial3.visible = false
-	$Button.visible = true
-	$TextureRect.visible = true
-	$Tutorial.visible = false
-	get_tree().change_scene("res://Scenes/Juego.tscn")
+#	$Tutorial3.visible = false
+#	$Button.visible = true
+#	$TextureRect.visible = true
+#	$Tutorial.visible = false
+	$Tutorial3/Buttont3.visible = false
+	Persistente.load_scene("res://Scenes/Juego.tscn")
+	#get_tree().change_scene("res://Scenes/Juego.tscn")
 
 
 func _on_VideoPlayer_finished():

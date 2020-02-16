@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mundo_sad.png-1142924fbf8405e88c9fe4fce5535d72.stex"
+path="res://.import/escena4_edit.jpg-10d0dc37181d7be4c738c63d3c99f1b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MundoFinal/mundo_sad.png"
-dest_files=[ "res://.import/mundo_sad.png-1142924fbf8405e88c9fe4fce5535d72.stex" ]
+source_file="res://Sprites/escena4_edit.jpg"
+dest_files=[ "res://.import/escena4_edit.jpg-10d0dc37181d7be4c738c63d3c99f1b7.stex" ]
 
 [params]
 
@@ -24,11 +24,11 @@ flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

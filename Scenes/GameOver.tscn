@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Sprites/botones/boton_replay1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/MundoFinal/mundo_sad.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/MundoFinal/mundo_feliz_bg.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/MundoFinal/mundo_feliz_bg.jpg" type="Texture" id=3]
+[ext_resource path="res://Sprites/MundoFinal/mundo_sad.jpg" type="Texture" id=4]
 [ext_resource path="res://Sounds/Buttons/Start 03.wav" type="AudioStream" id=5]
 [ext_resource path="res://Sprites/MundoFinal/nubes.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/MundoFinal/nubes_oscuiras.png" type="Texture" id=7]
@@ -59,7 +59,7 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FinalBueno"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -106,7 +106,7 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/FinalMalo"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,6 +159,7 @@ margin_left = -320.0
 margin_top = -165.0
 margin_right = -120.0
 margin_bottom = 35.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 9 )
@@ -175,14 +176,13 @@ margin_left = -170.0
 margin_top = -165.0
 margin_right = 30.0
 margin_bottom = 35.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 2 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Node" type="Node" parent="CanvasLayer/ButtonMenu"]
 
 [node name="txt_titulo_final" type="Label" parent="CanvasLayer"]
 anchor_right = 1.0

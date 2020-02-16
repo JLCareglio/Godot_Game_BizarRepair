@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Video Presentacion.ogv" type="VideoStream" id=1]
+[ext_resource path="res://BIZARREPAIR_Intro_480.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Scripts/Introduccion.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/Buttons/Start 03.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sprites/bizarrepair_text.png" type="Texture" id=4]
@@ -65,6 +65,7 @@ stream = ExtResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 stream = ExtResource( 1 )
+buffering_msec = 1000
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -79,6 +80,7 @@ margin_top = 180.0
 margin_right = 100.0
 margin_bottom = 380.0
 theme = SubResource( 1 )
+shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
@@ -121,6 +123,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
@@ -163,6 +166,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
@@ -207,6 +211,7 @@ margin_left = -210.0
 margin_top = -210.0
 margin_right = -10.0
 margin_bottom = -10.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 3 )
 texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mundo_feliz_bg.png-f88f3b0b233a8261b431c13a59ae7853.stex"
+path="res://.import/mundo_feliz_bg.jpg-15208652093a78448abbb8ff8f16cc72.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MundoFinal/mundo_feliz_bg.png"
-dest_files=[ "res://.import/mundo_feliz_bg.png-f88f3b0b233a8261b431c13a59ae7853.stex" ]
+source_file="res://Sprites/MundoFinal/mundo_feliz_bg.jpg"
+dest_files=[ "res://.import/mundo_feliz_bg.jpg-15208652093a78448abbb8ff8f16cc72.stex" ]
 
 [params]
 
