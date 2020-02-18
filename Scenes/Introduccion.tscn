@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://BIZARREPAIR_Intro_480.ogv" type="VideoStream" id=1]
+[ext_resource path="res://BIZARREPAIR_intro_360p_29fps.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Scripts/Introduccion.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/Buttons/Start 03.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sprites/bizarrepair_text.png" type="Texture" id=4]
